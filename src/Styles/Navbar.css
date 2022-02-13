@@ -1,0 +1,35 @@
+.navbar-logo {
+  height: 50px;
+}
+
+.navbar-title {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.login-popup {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #fff;
+}
+
+.login-popup-inner .close-login-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
