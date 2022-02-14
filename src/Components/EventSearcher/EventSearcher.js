@@ -17,79 +17,79 @@ const EventSearcher = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    console.log(searchQuery);
+    // console.log(searchQuery);
   };
 
   return (
-    <div>
-      <div className="search-bar">
-        <form className="event-search" onSubmit={submitHandler}>
-          <div className="event-search-bar">
-            <input
-              type="text"
-              placeholder="Search Events"
-              className="prompt"
-              onChange={(e) =>
-                setSearchQuery({
-                  ...searchQuery,
-                  search: e.target.value,
-                })
-              }
-              value={searchQuery.search}
-            />
-            <input type="submit" value="Search" />
-          </div>
-          <div className="event type checkboxes">
-            <input
-              type="checkbox"
-              id="workshop checkbox"
-              className="workshop checkbox"
-              value="Workshop"
-              onChange={(e) =>
-                setSearchQuery({
-                  ...searchQuery,
-                  workshop: e.target.value,
-                })
-              }
-              value={!searchQuery.workshop}
-            />
-            Workshop
-            <input
-              type="checkbox"
-              id="activity checkbox"
-              className="checkbox"
-              value="Activity"
-              onChange={(e) =>
-                setSearchQuery({
-                  ...searchQuery,
-                  activity: e.target.value,
-                })
-              }
-              value={!searchQuery.activity}
-            />
-            Activity
-            <input
-              type="checkbox"
-              id="tech talk checkbox"
-              className="checkbox"
-              value="Tech Talk"
-              onChange={(e) =>
-                setSearchQuery({
-                  ...searchQuery,
-                  techTalk: e.target.value,
-                })
-              }
-              value={!searchQuery.techTalk}
-            />
-            Tech Talk
-          </div>
-        </form>
-      </div>
-      <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
+      <div>
+        <div className="search-bar">
+          <form className="event-search" onSubmit={submitHandler}>
+            <div className="event-search-bar">
+              <input
+                type="text"
+                placeholder="Search Events"
+                className="prompt"
+                onChange={(e) =>
+                  setSearchQuery({
+                    ...searchQuery,
+                    search: e.target.value,
+                  })
+                }
+                value={searchQuery.search}
+              />
+              <input type="submit" value="Search" />
+            </div>
+            <div className="event type checkboxes">
+              <input
+                type="checkbox"
+                id="workshop checkbox"
+                className="workshop checkbox"
+                value="Workshop"
+                onChange={(e) =>
+                  setSearchQuery({
+                    ...searchQuery,
+                    workshop: e.target.value,
+                  })
+                }
+                value={!searchQuery.workshop}
+              />
+              Workshop
+              <input
+                type="checkbox"
+                id="activity checkbox"
+                className="checkbox"
+                value="Activity"
+                onChange={(e) =>
+                  setSearchQuery({
+                    ...searchQuery,
+                    activity: e.target.value,
+                  })
+                }
+                value={!searchQuery.activity}
+              />
+              Activity
+              <input
+                type="checkbox"
+                id="tech_talk checkbox"
+                className="checkbox"
+                value="tech_talk"
+                onChange={(e) =>
+                  setSearchQuery({
+                    ...searchQuery,
+                    tech_talk: e.target.value,
+                  })
+                }
+                value={!searchQuery.tech_talk}
+              />
+              Tech Talk
+            </div>
+          </form>
+        </div>
+
         <EventCardFilter searchQuery={searchQuery} />
-      </ApolloProvider>
-    </div>
+      </div>
+    </ApolloProvider>
   );
 };
 

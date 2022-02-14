@@ -4,8 +4,16 @@ export const showEvent = (query, event) => {
   var eventName = event.name.toLowerCase();
   var containsKeyword = eventName.includes(searchPhrase);
 
-  var isLoggedIn = sessionStorage.getItem("name") !== "";
+  // console.log(sessionStorage.getItem("name"));
+  var isLoggedIn =
+    sessionStorage.getItem("name") !== "" &&
+    sessionStorage.getItem("name") !== null;
+  // console.log(event.permission + "   " + isLoggedIn);
   var hasPermsForEvent = event.permission === "private" ? isLoggedIn : true;
+
+  // console.log(query);
+  // console.log(event.event_type);
+  // console.log(!query["activity"] && !query["workshop"] && !query["tech_talk"]);
 
   var matchesType;
 
@@ -14,10 +22,9 @@ export const showEvent = (query, event) => {
   } else {
     matchesType = query[event.event_type];
   }
-
   //   console.log(searchPhrase + "|" + eventName);
   //   console.log(containsKeyword);
-  //   console.log(hasPermsForEvent);
+  console.log(hasPermsForEvent);
   //   console.log(matchesType);
 
   return containsKeyword && hasPermsForEvent && matchesType;

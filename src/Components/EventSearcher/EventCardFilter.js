@@ -11,21 +11,23 @@ const EventCardFilter = ({ searchQuery }) => {
 
   // console.log({ error, data, loading });
 
-  if (loading) return <div>spinner</div>;
+  if (loading) return <div>loading</div>;
 
   if (error) return <div>oh nooooo!</div>;
 
   const events = data.sampleEvents;
   const order = orderEvents(events);
-
+  console.log("OWA OWA OWA");
   return (
-    <div className="card">
+    <div className="cards-wrapper">
       {order.map((ID) => {
         const currEvent = getEventByID(data.sampleEvents, ID);
 
-        console.log(showEvent(searchQuery, currEvent));
+        // console.log(showEvent(searchQuery, currEvent));
 
-        return <EventCard event={currEvent} />;
+        return showEvent(searchQuery, currEvent) ? (
+          <EventCard event={currEvent} key={currEvent.id} />
+        ) : null;
       })}
     </div>
   );
