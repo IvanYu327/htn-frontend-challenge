@@ -13,7 +13,7 @@ const EventCardFilter = ({ searchQuery }) => {
 
   if (loading) return <div>loading</div>;
 
-  if (error) return <div>oh nooooo!</div>;
+  if (error) return <div>Something Went Wrong!</div>;
 
   const events = data.sampleEvents;
   const order = orderEvents(events);
