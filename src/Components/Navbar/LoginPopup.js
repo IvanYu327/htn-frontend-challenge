@@ -101,7 +101,9 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
               </div>
             </div>
             {error !== "" ? <div className="login-error">{error}</div> : ""}
-            <input type="submit" classname="login-submit-btn" value="Log In" />
+            <button type="submit" className="login-submit-btn">
+              Log In
+            </button>
           </form>
 
           <CloseButton

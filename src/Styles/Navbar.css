@@ -76,7 +76,8 @@
 }
 
 .login-btn,
-.logout-btn {
+.logout-btn,
+.login-submit-btn {
   display: inline-flex;
   align-items: center;
   float: right;
@@ -89,9 +90,14 @@
   font-family: "Kayak Bold";
 }
 
-.login-btn {
+.login-btn,
+.login-submit-btn {
   background-color: var(--dark-blue);
   color: var(--pale-white);
+}
+
+.login-submit-btn {
+  float: left;
 }
 
 .logout-btn {
@@ -99,12 +105,13 @@
   color: var(--dark-blue);
 }
 
-.login-btn:hover {
-  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+.logout-btn:hover {
+  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.2);
 }
 
-.logout-btn:hover {
-  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+.login-btn:hover,
+.login-submit-btn:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
 }
 
 /* STYLES FOR THE LOGIN POPUP */
