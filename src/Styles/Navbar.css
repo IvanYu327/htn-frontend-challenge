@@ -1,12 +1,113 @@
-.navbar-logo {
+@font-face {
+  font-family: "Kayak Bold"; /*a name to be used later*/
+  src: url("./fonts/KayakSansBold.otf"); /*URL to font*/
+}
+
+:root {
+  --dark-blue: #0e3460;
+  --blue: #90a9c5;
+  --pale-white: #e8eef6;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--pale-white);
   height: 50px;
+  display: flex;
 }
 
-.navbar-title {
-  margin-left: 0;
-  margin-right: auto;
+.logo {
+  margin-left: 5%;
+  height: 30px;
+  margin-top: 10px;
 }
 
+.nav-btn-wrapper {
+  display: flex;
+  padding-left: 20px;
+}
+
+.nav-event-button {
+  font-family: "Kayak Bold";
+  position: relative;
+  margin-right: 0;
+  margin-left: auto;
+  text-decoration: none;
+  color: var(--dark-blue);
+  height: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.nav-event-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 10px;
+  background-color: #ffffa7;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-event-button:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+.login-wrapper {
+  margin-right: 2%;
+  margin-left: auto;
+  width: 150px;
+}
+
+.nav-username {
+  padding: 10px 0;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family: "Kayak Bold";
+  text-align: center;
+}
+
+.login-btn,
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  float: right;
+  margin-top: 10px;
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  font-family: "Kayak Bold";
+}
+
+.login-btn {
+  background-color: var(--dark-blue);
+  color: var(--pale-white);
+}
+
+.logout-btn {
+  background-color: var(--blue);
+  color: var(--dark-blue);
+}
+
+.login-btn:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn:hover {
+  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+}
+
+/* STYLES FOR THE LOGIN POPUP */
 .login-popup {
   position: absolute;
   z-index: 10;
@@ -22,14 +123,96 @@
 
 .login-popup-inner {
   position: relative;
+  z-index: 11;
   padding: 32px;
   width: 100%;
   max-width: 640px;
   background-color: #fff;
+  border-radius: 5px;
+
+  background: linear-gradient(90deg, #5d54a4, #7c78b8);
+  position: relative;
+  box-shadow: 0px 0px 24px #5c5696;
 }
 
-.login-popup-inner .close-login-btn {
+.close-login-btn {
+  color: black;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0px;
+  right: 0px;
+}
+
+.login-title {
+  text-align: left;
+}
+
+.login-field {
+  padding: 20px 0px;
+  position: relative;
+}
+
+.login-icon {
+  position: absolute;
+  height: 25px;
+  top: 30px;
+  color: #7875b5;
+}
+
+.login-input {
+  border: none;
+  border-bottom: 2px solid #d1d1d4;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 75%;
+  transition: 0.2s;
+}
+
+.login-input:active,
+.login-input:focus,
+.login-input:hover {
+  outline: none;
+  border-bottom-color: #6a679e;
+}
+
+.login-content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.login-background-shape {
+  transform: rotate(45deg);
+  position: absolute;
+  border-radius: 10px;
+}
+
+.login-background-shape1 {
+  height: 520px;
+  width: 800px;
+  background: #fff;
+  top: -150px;
+  right: 120px;
+  border-radius: 0 72px 0 0;
+}
+
+.login-background-shape2 {
+  height: 220px;
+  width: 400px;
+  background: var(--dark-blue);
+  top: 80px;
+  right: 40px;
+  border-radius: 72px;
 }

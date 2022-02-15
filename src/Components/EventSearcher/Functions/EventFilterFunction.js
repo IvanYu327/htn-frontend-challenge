@@ -24,8 +24,22 @@ export const showEvent = (query, event) => {
   }
   //   console.log(searchPhrase + "|" + eventName);
   //   console.log(containsKeyword);
-  console.log(hasPermsForEvent);
+  //   console.log(hasPermsForEvent);
   //   console.log(matchesType);
 
   return containsKeyword && hasPermsForEvent && matchesType;
+};
+
+export const showRelatedEvent = (event, relatedIDs) => {
+  if (relatedIDs.includes(event.id)) {
+    if (event.permission === "public") {
+      return true;
+    } else {
+      return (
+        sessionStorage.getItem("name") !== "" &&
+        sessionStorage.getItem("name") !== null
+      );
+    }
+  }
+  return false;
 };

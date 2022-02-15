@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+
+:root {
+  --dark-blue: 0e3460;
+  --light-green: #4f937e;
+}
+
+@font-face {
+  font-family: "Kayak Bold"; /*a name to be used later*/
+  src: url("./fonts/KayakSansBold.otf"); /*URL to font*/
+}
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#c8d9eb),
+      to(#f9ecec)
+    )
+    fixed;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 60px;
+  color: var(--dark-blue);
+  font-family: "Kayak Bold";
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  color: var(--light-green);
+  font-family: "Kayak Bold";
+  text-align: center;
+}
