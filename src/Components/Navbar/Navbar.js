@@ -18,7 +18,7 @@ const Navbar = () => {
 
   let navigate = useNavigate();
   const routeChange = () => {
-    navigate("/");
+    navigate("/HTN-EventSearcher/");
   };
 
   return (
