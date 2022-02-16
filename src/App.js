@@ -23,7 +23,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/HTN-EventSearcher/" element={<EventSearcher />} />
           <Route
-            path="/HTN-EventSearcher/:eventName"
+            path="/HTN-EventSearcher/:eventID/:eventName"
             element={<EventDetails />}
           />
         </Routes>
