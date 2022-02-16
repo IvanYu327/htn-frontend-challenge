@@ -21,8 +21,8 @@ function App() {
       <ApolloProvider client={client}>
         <Navbar />
         <Routes>
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="" element={<EventSearcher />} />
+          <Route path="/*" element={<PageNotFound />} />
+          <Route path="/" element={<EventSearcher />} />
           <Route path="/:eventID/:eventName" element={<EventDetails />} />
         </Routes>
       </ApolloProvider>
