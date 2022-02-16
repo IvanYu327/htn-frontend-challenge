@@ -10,13 +10,13 @@ import EventDetails from "./Components/EventPage/EventPage";
 import PageNotFound from "./Components/PageNotFound";
 
 function App() {
+  // declare spollo client to get from graphql endpoint
   const client = new ApolloClient({
     uri: "https://api.hackthenorth.com/v3/graphql",
     cache: new InMemoryCache(),
   });
 
   return (
-    // <HashRouter basename={process.env.PUBLIC_URL}>
     <Router>
       <ApolloProvider client={client}>
         <Navbar />
@@ -27,7 +27,6 @@ function App() {
         </Routes>
       </ApolloProvider>
     </Router>
-    // </HashRouter>
   );
 }
 

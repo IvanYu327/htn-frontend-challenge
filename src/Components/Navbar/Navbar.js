@@ -6,9 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginPopup from "./LoginPopup";
 import "../../styles/Navbar.css";
 
+//navbar component
 const Navbar = () => {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
 
+  // logout function
   const Logout = () => {
     sessionStorage.setItem("name", "");
     sessionStorage.setItem("logged in", false);
@@ -16,11 +18,13 @@ const Navbar = () => {
     window.location.reload();
   };
 
+  // routing for the event tab button
   let navigate = useNavigate();
   const routeChange = () => {
     navigate("");
   };
 
+  // return navbar comopnents
   return (
     <nav className="nav">
       <img src={logo} alt="Logo" className="logo" />

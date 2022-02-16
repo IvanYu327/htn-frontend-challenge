@@ -3,14 +3,11 @@ import CloseButton from "react-bootstrap/CloseButton";
 import { MdEmail } from "react-icons/md";
 import { AiFillLock } from "react-icons/ai";
 
-/**
- * Hook that alerts clicks outside of the passed ref
- */
+// hook to close do something when a click occurs outside of the target element
+// Used to close the login popup when user clicks outside it
 function useOutsideAlerter(ref, setTrigger) {
   useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
+    //check if clicks are on the element
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
         setTrigger(false);
@@ -26,15 +23,18 @@ function useOutsideAlerter(ref, setTrigger) {
   }, [ref, setTrigger]);
 }
 
+//Login popup element, shown if the trigger is true
 const LoginPopup = ({ Trigger, setTrigger }) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, setTrigger);
 
+  // hardcorded username
   const hackerUser = {
     email: "ivan@htn.com",
     password: "Let'sGiveIvanAnInterview",
   };
 
+  // user details currently entered on screen
   const [details, setDetails] = useState({
     email: "",
     password: "",
@@ -48,6 +48,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
 
   const [error, setError] = useState("");
 
+  //verify login
   const submitHandler = (e) => {
     e.preventDefault();
     console.log("attempting login");
@@ -70,6 +71,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
     }
   };
 
+  //return component
   return Trigger ? (
     <div className="login-popup">
       <div ref={wrapperRef} className="login-popup-inner">
@@ -121,9 +123,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
         </div>
       </div>
     </div>
-  ) : (
-    ""
-  );
+  ) : null;
 };
 
 export default LoginPopup;

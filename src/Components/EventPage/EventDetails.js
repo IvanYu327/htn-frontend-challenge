@@ -13,6 +13,7 @@ import {
 import defaultPfp from "../../images/default-pfp.png";
 import PageNotFound from "../PageNotFound";
 
+//function to determine if we need to show related events, then show them
 const RelatedEvents = (relatedIDs, events) => {
   return relatedIDs.length === 0 ? null : (
     <div>
@@ -27,6 +28,7 @@ const RelatedEvents = (relatedIDs, events) => {
   );
 };
 
+//function to determine if there are speakers for the event, then show them
 const Speakers = (speakers) => {
   return speakers.length < 1 ? null : (
     <div>
@@ -45,6 +47,7 @@ const Speakers = (speakers) => {
   );
 };
 
+//function to render speaker pfp based on if url passed in was valid
 const SpeakerProfilePicture = (url) => {
   console.log(url);
   return url !== null && url.length > 1 ? (
@@ -54,6 +57,7 @@ const SpeakerProfilePicture = (url) => {
   );
 };
 
+//function to check if the public url field passed through exists and then render it
 const publicURL = (url) => {
   return url.length > 1 ? (
     <div className="url-container">
@@ -65,6 +69,7 @@ const publicURL = (url) => {
   ) : null;
 };
 
+//function to check if the private url field passed through exists and then render it if the user is logged in
 const privateURL = (url) => {
   return isLoggedIn() && url.length > 1 ? (
     <div className="url-container">
@@ -76,6 +81,8 @@ const privateURL = (url) => {
   ) : null;
 };
 
+//Event Details page
+// uses the above functions to render the events details, also based on if the user is logged in or not
 const EventDetails = ({ event }) => {
   var relatedIDs = event.related_events;
 
@@ -87,6 +94,7 @@ const EventDetails = ({ event }) => {
   if (loading) return null;
   if (error) return <h3>Something Went Wrong!</h3>;
 
+  //get and format event details into desired format
   const date = UnixToDate(event.start_time);
   const startTime = UnixToTime(event.start_time);
   const endTime = UnixToTime(event.end_time);
@@ -94,8 +102,7 @@ const EventDetails = ({ event }) => {
   const eventPerms = capitalizeFirstLetter(event.permission);
   const speakers = event.speakers;
 
-  console.log(isLoggedIn());
-  console.log(event.permission === "private");
+  // returns the event page unless it is private and the user isnt logged in
   return !isLoggedIn() && event.permission === "private" ? (
     <PageNotFound type="Login Required" />
   ) : (

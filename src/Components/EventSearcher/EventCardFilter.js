@@ -7,7 +7,10 @@ import { showEvent } from "../Functions/EventFilterFunction";
 import EventCard from "./EventCard";
 import "../../styles/EventCard.css";
 
+//Event card filter
+//Takes the search parameters and returns only the events that fit them and the user has the permissions to view it
 const EventCardFilter = ({ searchQuery }) => {
+  // fetch data using the query that returns preview details for each event
   const { error, data, loading } = useQuery(GET_EVENT_CARDS);
 
   if (loading) return null;
@@ -18,6 +21,7 @@ const EventCardFilter = ({ searchQuery }) => {
   const order = orderEvents(events);
   var foundResults = false;
 
+  // filter through the events and call the EventCard to show cards
   return (
     <>
       <div className="event-cards-wrapper">

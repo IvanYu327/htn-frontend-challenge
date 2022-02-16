@@ -3,7 +3,9 @@ import EventCardFilter from "./EventCardFilter";
 
 import "../../styles/EventSearchPage.css";
 
+//Event search page, contains the descriptions and the fields for the user to make search queries
 const EventSearcher = () => {
+  // useState to keep track of user query
   const [searchQuery, setSearchQuery] = useState({
     search: "",
     workshop: false,
@@ -12,6 +14,8 @@ const EventSearcher = () => {
   });
 
   const sessionName = sessionStorage.getItem("name");
+
+  // return event search component
   return (
     <>
       <div className="event-searcher-description">
@@ -39,7 +43,6 @@ const EventSearcher = () => {
           }
           value={searchQuery.search}
         />
-
         <div className="event-search-checkbox-container">
           <div className="checkbox workshop">
             <label>

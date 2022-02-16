@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/PageNotFound.css";
 
+// Page not found for when the url is invalid or if the page is private and the user is not logged in
 const PageNotFound = ({ type }) => {
   switch (type) {
     case "Login Required":

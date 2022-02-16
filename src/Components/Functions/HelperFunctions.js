@@ -31,7 +31,7 @@ export const UnixToDate = (unix) => {
   return month + "/" + day + "/" + year;
 };
 
-//Get the time of day from a unix time
+//Get the time of day from a unix time with am pm too
 export const UnixToTime = (unix) => {
   var date = new Date(unix);
   // Hours part from the timestamp
