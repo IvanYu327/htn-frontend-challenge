@@ -31,13 +31,13 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
   useOutsideAlerter(wrapperRef, setTrigger);
 
   const hackerUser = {
-    email: "hacker@htn.com",
+    email: "ivan@htn.com",
     password: "Let'sGiveIvanAnInterview",
   };
 
   const [details, setDetails] = useState({
-    email: "hacker@htn.com",
-    password: "Let'sGiveIvanAnInterview",
+    email: "",
+    password: "",
   });
 
   const set = (name) => {
@@ -102,7 +102,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
             </div>
             {error !== "" ? <div className="login-error">{error}</div> : ""}
             <button type="submit" className="login-submit-btn">
-              Log In
+              Login
             </button>
           </form>
 

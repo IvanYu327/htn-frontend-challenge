@@ -10,8 +10,6 @@ import "../../styles/EventCard.css";
 const EventCardFilter = ({ searchQuery }) => {
   const { error, data, loading } = useQuery(GET_EVENT_CARDS);
 
-  // console.log({ error, data, loading });
-
   if (loading) return null;
 
   if (error) return <h3>Something Went Wrong!</h3>;

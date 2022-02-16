@@ -226,3 +226,7 @@
   right: 40px;
   border-radius: 72px;
 }
+
+.login-error {
+  color: red;
+}
