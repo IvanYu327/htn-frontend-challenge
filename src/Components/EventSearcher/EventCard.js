@@ -6,10 +6,10 @@ import {
 } from "../Functions/HelperFunctions";
 import { useNavigate } from "react-router-dom";
 import "../../styles/EventCard.css";
-import activityIcon from "../../images/activity-icon.png";
-import techTalkIcon from "../../images/tech-talk-icon.png";
-import workshopIcon from "../../images/workshop-icon.png";
-import defaultIcon from "../../images/default-event-icon.png";
+import activityIcon from "../../images/activity-icon.webp";
+import techTalkIcon from "../../images/tech-talk-icon.webp";
+import workshopIcon from "../../images/workshop-icon.webp";
+import defaultIcon from "../../images/default-event-icon.webp";
 
 //Render a 3d isometric icon for each card based on its event type
 const renderCardIcon = (eventType) => {

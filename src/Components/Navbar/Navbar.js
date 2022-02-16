@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.webp";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import LoginPopup from "./LoginPopup";

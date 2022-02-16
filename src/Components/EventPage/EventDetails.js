@@ -10,7 +10,7 @@ import {
   UnixToTime,
   isLoggedIn,
 } from "../Functions/HelperFunctions";
-import defaultPfp from "../../images/default-pfp.png";
+import defaultPfp from "../../images/default-pfp.webp";
 import PageNotFound from "../PageNotFound";
 
 //function to determine if we need to show related events, then show them
