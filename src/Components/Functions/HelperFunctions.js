@@ -58,7 +58,7 @@ export const capitalizeFirstLetter = (string) => {
 //check if the user is logged in
 export const isLoggedIn = () => {
   return (
-    sessionStorage.getItem("name") != null &&
-    sessionStorage.getItem("name") != ""
+    sessionStorage.getItem("name") !== null &&
+    sessionStorage.getItem("name") !== ""
   );
 };
