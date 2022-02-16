@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         {/* <Routes basename={process.env.PUBLIC_URL}> */}
         <Routes>
-          <Route path="/HTN-EventSearcher/*" element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />} />
           <Route path="/HTN-EventSearcher/" element={<EventSearcher />} />
           <Route
             path="/HTN-EventSearcher/:eventID/:eventName"

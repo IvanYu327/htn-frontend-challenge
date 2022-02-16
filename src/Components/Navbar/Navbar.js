@@ -26,7 +26,7 @@ const Navbar = () => {
       <img src={logo} alt="Logo" className="logo" />
 
       <div className="nav-btn-wrapper">
-        <Link className="nav-event-button" to="/">
+        <Link className="nav-event-button" to="/HTN-EventSearcher/">
           Events
         </Link>
       </div>

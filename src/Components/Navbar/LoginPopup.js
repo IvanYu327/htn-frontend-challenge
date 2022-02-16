@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import CloseButton from "react-bootstrap/CloseButton";
-import { FaUserAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { AiFillLock } from "react-icons/ai";
 
 /**
@@ -78,7 +78,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
           <form className="login" onSubmit={submitHandler}>
             <div className="form-inner">
               <div className="login-field">
-                <FaUserAlt className="login-icon" />
+                <MdEmail className="login-icon" />
                 <input
                   type="email"
                   name="email"
