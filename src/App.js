@@ -21,8 +21,8 @@ function App() {
   });
 
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
-      {/* <Router> */}
+    // <HashRouter basename={process.env.PUBLIC_URL}>
+    <Router>
       <ApolloProvider client={client}>
         <Navbar />
         <Routes>
@@ -31,8 +31,8 @@ function App() {
           <Route path="/:eventID/:eventName" element={<EventDetails />} />
         </Routes>
       </ApolloProvider>
-      {/* </Router> */}
-    </HashRouter>
+    </Router>
+    // </HashRouter>
   );
 }
 

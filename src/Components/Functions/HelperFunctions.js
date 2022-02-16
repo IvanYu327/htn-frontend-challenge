@@ -28,7 +28,7 @@ export const UnixToDate = (unix) => {
   var month = months[date.getMonth()];
   var day = date.getDate();
 
-  return month + " " + day + " " + year;
+  return month + "/" + day + "/" + year;
 };
 
 //Get the time of day from a unix time
@@ -39,8 +39,14 @@ export const UnixToTime = (unix) => {
   // Minutes part from the timestamp
   var minutes = ("0" + date.getMinutes()).slice(-2);
 
+  var ampm = "am";
+  if (hours > 12) {
+    hours = hours % 12;
+    ampm = "pm";
+  }
+
   //HH:MM formate
-  return hours + ":" + minutes;
+  return hours + ":" + minutes + ampm;
 };
 
 //Function to capitalize the event type from the GraphQL response

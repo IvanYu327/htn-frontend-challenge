@@ -14,12 +14,7 @@ import defaultPfp from "../../images/default-pfp.png";
 import PageNotFound from "../PageNotFound";
 
 const RelatedEvents = (relatedIDs, events) => {
-  return relatedIDs.length === 0 ? (
-    <div>
-      <div>Related Events</div>
-      <div>There are no related events</div>
-    </div>
-  ) : (
+  return relatedIDs.length === 0 ? null : (
     <div>
       <h3 className="related-title">Related Events</h3>
       <div className="event-cards-wrapper">
@@ -89,8 +84,8 @@ const EventDetails = ({ event }) => {
   }
 
   const { error, data, loading } = useQuery(GET_EVENT_CARDS);
-  if (loading) return <div>loading</div>;
-  if (error) return <div>Something Went Wrong!</div>;
+  if (loading) return null;
+  if (error) return <h3>Something Went Wrong!</h3>;
 
   const date = UnixToDate(event.start_time);
   const startTime = UnixToTime(event.start_time);

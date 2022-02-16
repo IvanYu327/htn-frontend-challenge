@@ -14,24 +14,28 @@ const EventCardFilter = ({ searchQuery }) => {
 
   if (loading) return null;
 
-  if (error) return <div>Something Went Wrong!</div>;
+  if (error) return <h3>Something Went Wrong!</h3>;
 
   const events = data.sampleEvents;
   const order = orderEvents(events);
-  // console.log("OWA OWA OWA");
-  // console.log(searchQuery);
-  // console.log(!searchQuery.workshop);
-  // console.log(!searchQuery.activity);
-  // console.log(!searchQuery.tech_talk);
+  var foundResults = false;
+
   return (
-    <div className="event-cards-wrapper">
-      {order.map((ID) => {
-        const currEvent = getEventByID(data.sampleEvents, ID);
-        return showEvent(searchQuery, currEvent) ? (
-          <EventCard event={currEvent} key={currEvent.id} />
-        ) : null;
-      })}
-    </div>
+    <>
+      <div className="event-cards-wrapper">
+        {order.map((ID) => {
+          const currEvent = getEventByID(data.sampleEvents, ID);
+          const toShowEvent = showEvent(searchQuery, currEvent);
+          if (toShowEvent) {
+            foundResults = true;
+          }
+          return toShowEvent ? (
+            <EventCard event={currEvent} key={currEvent.id} />
+          ) : null;
+        })}
+      </div>
+      {foundResults ? null : <h3> No events for this search! </h3>}
+    </>
   );
 };
 
