@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 import "./styles/App.css";
@@ -16,20 +16,17 @@ function App() {
   });
 
   return (
-    <>
+    <Router basename={process.env.PUBLIC_URL}>
+      {/* <Router> */}
       <ApolloProvider client={client}>
         <Navbar />
-        {/* <Routes basename={process.env.PUBLIC_URL}> */}
         <Routes>
           <Route path="*" element={<PageNotFound />} />
-          <Route path="/HTN-EventSearcher/" element={<EventSearcher />} />
-          <Route
-            path="/HTN-EventSearcher/:eventID/:eventName"
-            element={<EventDetails />}
-          />
+          <Route path="" element={<EventSearcher />} />
+          <Route path="/:eventID/:eventName" element={<EventDetails />} />
         </Routes>
       </ApolloProvider>
-    </>
+    </Router>
   );
 }
 
