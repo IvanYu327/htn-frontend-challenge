@@ -48,9 +48,9 @@ const Speakers = (speakers) => {
 const SpeakerProfilePicture = (url) => {
   console.log(url);
   return url !== null && url.length > 1 ? (
-    <img className="speaker-pfp" src={url} alt="profile picture" />
+    <img className="speaker-pfp" src={url} alt="profile" />
   ) : (
-    <img className="speaker-pfp" src={defaultPfp} alt="profile picture" />
+    <img className="speaker-pfp" src={defaultPfp} alt="no profile" />
   );
 };
 
@@ -58,7 +58,7 @@ const publicURL = (url) => {
   return url.length > 1 ? (
     <div className="url-container">
       <span>Watch: </span>
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         {url}
       </a>
     </div>
@@ -69,7 +69,7 @@ const privateURL = (url) => {
   return isLoggedIn() && url.length > 1 ? (
     <div className="url-container">
       <span>Join: </span>
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         {url}
       </a>
     </div>

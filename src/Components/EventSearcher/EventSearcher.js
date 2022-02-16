@@ -11,11 +11,6 @@ const EventSearcher = () => {
     tech_talk: false,
   });
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    // console.log(searchQuery);
-  };
-
   const sessionName = sessionStorage.getItem("name");
   return (
     <>
