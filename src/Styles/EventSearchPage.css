@@ -69,6 +69,10 @@
   font-size: small;
 }
 
+.checkbox label:hover {
+  background-color: #a2a2a2;
+}
+
 .checkbox label input {
   position: absolute;
   display: none;
