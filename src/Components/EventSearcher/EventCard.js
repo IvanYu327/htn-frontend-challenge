@@ -29,7 +29,7 @@ const EventCard = ({ event }) => {
 
   const routeChange = () => {
     let path = event.name.replace(/ /g, "_");
-    navigate("/HTN-EventSearcher/" + event.id + "/" + path);
+    navigate("/" + event.id + "/" + path);
   };
 
   const date = UnixToDate(event.start_time);

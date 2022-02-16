@@ -19,13 +19,10 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <Navbar />
-        <Routes>
+        <Routes basename={process.env.PUBLIC_URL}>
           <Route path="*" element={<PageNotFound />} />
-          <Route path="/HTN-EventSearcher/" element={<EventSearcher />} />
-          <Route
-            path="/HTN-EventSearcher/:eventID/:eventName"
-            element={<EventDetails />}
-          />
+          <Route path="/" element={<EventSearcher />} />
+          <Route path="/:eventID/:eventName" element={<EventDetails />} />
         </Routes>
       </ApolloProvider>
     </>

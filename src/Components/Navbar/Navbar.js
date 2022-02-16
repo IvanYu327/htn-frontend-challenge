@@ -18,7 +18,7 @@ const Navbar = () => {
 
   let navigate = useNavigate();
   const routeChange = () => {
-    navigate("/HTN-EventSearcher");
+    navigate("/");
   };
 
   return (
@@ -26,7 +26,7 @@ const Navbar = () => {
       <img src={logo} alt="Logo" className="logo" />
 
       <div className="nav-btn-wrapper">
-        <Link className="nav-event-button" to="/HTN-EventSearcher">
+        <Link className="nav-event-button" to="/">
           Events
         </Link>
       </div>
