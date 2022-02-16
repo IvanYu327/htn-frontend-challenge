@@ -30,9 +30,16 @@ h1 {
   text-align: center;
 }
 
-h2 {
+h3 {
   font-size: 30px;
   color: var(--light-green);
   font-family: "Kayak Bold";
   text-align: center;
+}
+
+p {
+  font-size: 15px;
+  color: var(--dark-blue);
+  font-family: "Kayak Bold";
+  text-align: left;
 }

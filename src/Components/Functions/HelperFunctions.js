@@ -42,3 +42,17 @@ export const UnixToTime = (unix) => {
   //HH:MM formate
   return hours + ":" + minutes;
 };
+
+//Function to capitalize the event type from the GraphQL response
+export const capitalizeFirstLetter = (string) => {
+  string = string.replace(/_/g, " ");
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+//check if the user is logged in
+export const isLoggedIn = () => {
+  return (
+    sessionStorage.getItem("name") != null &&
+    sessionStorage.getItem("name") != ""
+  );
+};

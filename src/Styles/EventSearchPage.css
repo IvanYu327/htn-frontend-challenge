@@ -1,0 +1,89 @@
+:root {
+  --dark-blue: #0e3460;
+  --blue: #90a9c5;
+  --pale-white: #e8eef6;
+}
+
+.event-searcher-description {
+  margin-top: 100px;
+}
+
+.title {
+  font-size: 100px;
+}
+
+.event-search-username {
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.search-bar {
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-query-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+  height: 2.8rem;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.event-search-checkbox-container {
+  padding-top: 5px;
+}
+
+.checkbox {
+  margin: 4px;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid var(--dark-blue);
+  overflow: hidden;
+  float: left;
+}
+
+.checkbox label {
+  float: left;
+  line-height: 25px;
+  width: 90px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.checkbox label span {
+  text-align: center;
+  padding: 3px 0;
+  display: block;
+  font-size: small;
+}
+
+.checkbox label input {
+  position: absolute;
+  display: none;
+}
+
+.checkbox label input + span {
+  color: var(--dark-blue);
+}
+
+.checkbox input:checked + span {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+.workshop input:checked + span,
+.activity input:checked + span,
+.tech-talk input:checked + span {
+  background-color: var(--dark-blue);
+  color: var(--pale-white);
+  border-color: var(--dark-blue);
+}

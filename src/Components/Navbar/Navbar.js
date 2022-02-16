@@ -12,12 +12,13 @@ const Navbar = () => {
   const Logout = () => {
     sessionStorage.setItem("name", "");
     sessionStorage.setItem("logged in", false);
+    routeChange();
     window.location.reload();
   };
 
   let navigate = useNavigate();
   const routeChange = () => {
-    navigate();
+    navigate("");
   };
 
   return (

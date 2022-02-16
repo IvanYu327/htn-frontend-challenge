@@ -1,10 +1,11 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_EVENT_CARDS } from "../../GraphQL/schema";
-import { orderEvents } from "./Functions/EventSortFunction";
-import { getEventByID } from "./Functions/HelperFunctions";
-import { showEvent } from "./Functions/EventFilterFunction";
+import { orderEvents } from "../Functions/EventSortFunction";
+import { getEventByID } from "../Functions/HelperFunctions";
+import { showEvent } from "../Functions/EventFilterFunction";
 import EventCard from "./EventCard";
+import "../../styles/EventCard.css";
 
 const EventCardFilter = ({ searchQuery }) => {
   const { error, data, loading } = useQuery(GET_EVENT_CARDS);
@@ -23,7 +24,7 @@ const EventCardFilter = ({ searchQuery }) => {
   // console.log(!searchQuery.activity);
   // console.log(!searchQuery.tech_talk);
   return (
-    <div className="cards-wrapper">
+    <div className="event-cards-wrapper">
       {order.map((ID) => {
         const currEvent = getEventByID(data.sampleEvents, ID);
         return showEvent(searchQuery, currEvent) ? (
