@@ -3,7 +3,10 @@
   src: url("./fonts/KayakSansBold.otf");
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+@font-face {
+  font-family: "Space Mono Bold";
+  src: url("./fonts/SpaceMono-Bold.ttf");
+}
 
 root {
   --dark-blue: #0e3460;
@@ -36,7 +39,7 @@ root {
 }
 
 .event-card-title {
-  font-family: "Space Mono", monospace;
+  font-family: "Space Mono Bold", monospace;
   text-align: left;
   color: var(--dark-blue);
   font-size: 1.2rem;

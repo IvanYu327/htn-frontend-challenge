@@ -1,17 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
-
 :root {
   --dark-blue: 0e3460;
   --light-green: #4f937e;
 }
 
 @font-face {
-  font-family: "Kayak Bold"; /*a name to be used later*/
-  src: url("./fonts/KayakSansBold.otf"); /*URL to font*/
+  font-family: "Kayak Bold";
+  src: url("./fonts/KayakSansBold.otf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat-Light.ttf");
 }
 
 body {
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: -webkit-gradient(
       linear,
       left top,
