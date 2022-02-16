@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Kayak Bold";
+  src: url("./fonts/KayakSansBold.otf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+root {
+  --dark-blue: #0e3460;
+  --blue: #90a9c5;
+  --pale-white: #e8eef6;
+}
+
+.event-cards-wrapper {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-auto-rows: auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.event-card {
+  font-family: "Space Mono", monospace;
+  padding: 10px;
+  min-height: 150px;
+  overflow: hidden;
+  background-image: linear-gradient(to right, var(--pale-white), var(--blue));
+  border-radius: 20px;
+  transition: box-shadow 0.3s;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.event-card-title {
+  font-family: "Space Mono", monospace;
+  text-align: left;
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+}
+
+.event-content {
+  width: 80%;
+  margin: 3px;
+}
+
+.event-tag {
+  background-image: linear-gradient(to right, var(--blue), var(--pale-white));
+  border-radius: 30px;
+  margin: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  align-self: flex-end;
+  font-family: "Space Mono", monospace;
+}
+.event-icon {
+  max-height: 150px;
+}
+
+.event-card:hover {
+  box-shadow: 5px 10px var(--dark-blue);
+}
