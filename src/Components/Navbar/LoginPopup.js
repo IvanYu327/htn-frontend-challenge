@@ -86,6 +86,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
                   className="login-input"
                   onChange={set("email")}
                   value={details.email}
+                  placeholder="Email"
                 />
               </div>
               <div className="login-field">
@@ -97,6 +98,7 @@ const LoginPopup = ({ Trigger, setTrigger }) => {
                   className="login-input"
                   onChange={set("password")}
                   value={details.password}
+                  placeholder="Password"
                 />
               </div>
             </div>
