@@ -11,6 +11,7 @@ import {
   isLoggedIn,
 } from "../Functions/HelperFunctions";
 import defaultPfp from "../../images/default-pfp.png";
+import PageNotFound from "../PageNotFound";
 
 const RelatedEvents = (relatedIDs, events) => {
   return relatedIDs.length === 0 ? (
@@ -98,7 +99,11 @@ const EventDetails = ({ event }) => {
   const eventPerms = capitalizeFirstLetter(event.permission);
   const speakers = event.speakers;
 
-  return (
+  console.log(isLoggedIn());
+  console.log(event.permission === "private");
+  return !isLoggedIn() && event.permission === "private" ? (
+    <PageNotFound type="Login Required" />
+  ) : (
     <div className="event-details-wrapper">
       <h1 className="event-title">{event.name}</h1>
       <h3>
