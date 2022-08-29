@@ -15,7 +15,7 @@ const EventCardFilter = ({ searchQuery }) => {
 
   if (loading) return null;
 
-  if (error) return <h3>Something Went Wrong!</h3>;
+  if (error) return <h3>The API for this challenge has been closed :( .</h3>;
 
   const events = data.sampleEvents;
   const order = orderEvents(events);
